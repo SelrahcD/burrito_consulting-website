@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "eleventy --serve & npx tailwindcss -i ./styles/tailwind.css -o ./_tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy & npx tailwindcss -i ./styles/tailwind.css -o ./_tmp/style.css -o _site/style.css --minify"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/SelrahcD/burrito_consulting-website/issues"
   },
-  "homepage": "https://github.com/SelrahcD/burrito_consulting-website#readme"
+  "homepage": "https://github.com/SelrahcD/burrito_consulting-website#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "tailwindcss": "^3.0.24"
+  }
 }
